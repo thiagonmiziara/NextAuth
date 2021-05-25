@@ -1,4 +1,4 @@
-import {ReactNode} from "react";
+import { ReactNode } from "react";
 import { useCan } from "../hooks/useCan";
 
 interface CanProps {
@@ -7,18 +7,14 @@ interface CanProps {
   roles?: string[];
 }
 //component faz a verificação se o user tem as permissions validas
-const Can = ({children,permissions, roles}:CanProps) => {
-  const userCanSeeComponent = useCan({permissions, roles});
+const Can = ({ children, permissions, roles }: CanProps) => {
+  const userCanSeeComponent = useCan({ permissions, roles });
 
-  if(!userCanSeeComponent){
+  if (!userCanSeeComponent) {
     return null;
   }
 
-  return (
-    <>
-      {children}
-    </>
-  )
-}
+  return <>{children}</>;
+};
 
-export default Can
+export default Can;
